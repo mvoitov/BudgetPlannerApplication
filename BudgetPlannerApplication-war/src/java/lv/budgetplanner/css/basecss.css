@@ -1,0 +1,100 @@
+/* 
+    Document   : basecss
+    Created on : 08.12.2012, 13:28:50
+    Author     : Maxim
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+html,body {
+    margin:0;
+    padding:0;
+}
+body {
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:15px;
+}
+p {
+    margin:0 10px 10px;
+}
+div#header a{
+    float:left;
+    padding:8px;
+    background-color:#eeeeee;
+    display:block;
+    margin-right:9px;
+    text-decoration:none;
+    border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px; 
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:15px;
+    color:#666;
+    font-weight:bold;
+    text-shadow:1px 1px 1px #fff;
+}
+div#header h1 {
+    height:80px;
+    line-height:80px;
+    margin:0;
+    padding-left:10px;
+    background: #333;
+    color: #79B30B;
+}
+div#navigation {
+    background: #EEE;
+    border-radius: 6px 0 0 0;
+    -webkit-border-radius:6px 0 0 0;
+    -moz-border-radius:6px 0 0 0; 
+    -khtml-border-radius:6px 0 0 0;
+}
+div#extra {
+    background: #EEE;
+    border-radius: 6px 0 0 0;
+    -webkit-border-radius:6px 0 0 0;
+    -moz-border-radius:6px 0 0 0; 
+    -khtml-border-radius:6px 0 0 0;
+}
+div#footer {
+    padding-right: 10px;
+    text-align: right;
+    background: #333;
+    color: #FFF;
+    border-radius: 0 0 6px 6px;
+    -webkit-border-radius:0 0 6px 6px; 
+    -moz-border-radius:0 0 6px 6px; 
+    -khtml-border-radius:0 0 6px 6px;
+}
+div#footer p {
+    margin:0;
+    padding:5px 10px
+}
+div#wrapper {
+    float:left;
+    width:100%
+}
+div#navigation {
+    float:right;
+    width:20%
+}
+div#extra {
+    clear:both;
+    width:100%
+}
+td#incomeStyle {
+    background-color: #00cc33;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius:6px 6px 6px 6px;
+    -moz-border-radius:6px 6px 6px 6px; 
+    -khtml-border-radius:6px 6px 6px 6px;
+}
+td#outgoingsStyle {
+    background-color: red;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius:6px 6px 6px 6px;
+    -moz-border-radius:6px 6px 6px 6px; 
+    -khtml-border-radius:6px 6px 6px 6px;
+}

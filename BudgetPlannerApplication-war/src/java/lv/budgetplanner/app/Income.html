@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Income</title>
+        <wicket:link>
+            <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        </wicket:link>
+    </head>
+    <body>
+        <wicket:extend>
+            <form wicket:id="form">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th align="center"><b>Income</b></th>
+                            <th align="center"><b>Frequency</b></th>
+                            <th align="center"><b>Amount</b></th>
+                            <th align="center"><b><span id="choosebleLabel">Anual</span> amount</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Your take-home pay</td>
+                            <td align="center">
+                                <select wicket:id="youTakeHomePaySelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="youTakeHomePayInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="youTakeHomePayLabel">0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Your partner's take-home pay</td>
+                            <td align="center">
+                                <select wicket:id="yourPartnersTakeHomePaySelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="yourPartnersTakeHomePayInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="yourPartnersTakeHomePayLabel">0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bonuses / overtime</td>
+                            <td align="center">
+                                <select wicket:id="bonusesOvertimeSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="bonusesOvertimeInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="bonusesOvertimeLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Income from savings and investments</td>
+                            <td align="center">
+                                <select wicket:id="incomeFromSavingsAndInvestmentsSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="incomeFromSavingsAndInvestmentsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="incomeFromSavingsAndInvestmentsLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Centrelink benefits</td>
+                            <td align="center">
+                                <select wicket:id="centrelingBenefitsSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="centrelingBenefitsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="centrelingBenefitsLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Family benefit payments</td>
+                            <td align="center">
+                                <select wicket:id="familyBenefitsPaymentsSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="familyBenefitsPaymentsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="familyBenefitsPaymentsLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Child support received</td>
+                            <td align="center">
+                                <select wicket:id="childSupportReseivedSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="childSupportReseivedInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="childSupportReseivedLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Other</td>
+                            <td align="center">
+                                <select wicket:id="otherSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="otherInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="otherLabel">0</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pager">
+                    <li class="previous disabled"><a href="#">&larr; Previous</a></li>
+                    <li><input type="submit" value="Update" class="btn"></input></li>
+                    <li class="next"><a wicket:id="nextPage">Next &rarr;</a></li>
+                </ul>
+            </form>
+        </wicket:extend>
+    </body>
+</html>

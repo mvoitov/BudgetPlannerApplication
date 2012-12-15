@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>HomeUtilities</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <wicket:extend>
+            <form wicket:id="form">
+                <table style="width: 80%;">
+                    <thead>
+                        <tr>
+                            <th align="center"><b>Home</b></th>
+                            <th align="center"><b>Frequency</b></th>
+                            <th align="center"><b>Amount</b></th>
+                            <th align="center"><b><label id="choosebleLabel">Anual</label> amount</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 350px;">Council rates</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="councilRatesInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="councilRatesLabel">0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Body corporate fees</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="bodyCorporateFeesInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="bodyCorporateFeesLabel">0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Home and contents insurance</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="homeAndContestsInsuranceInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="homeAndContestsInsuranceLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Home maintenance and repairs</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="homeMaintenanceAndRepairsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="homeMaintenanceAndRepairsLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>New furniture / appliances</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="newFurnitureAppliancesInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="newFurnitureAppliancesLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Other</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="otherOneInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="otherOneLabel" >0</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="width: 80%;">
+                    <thead>
+                        <tr>
+                            <th align="center"><b>Utilities</b></th>
+                            <th align="center"><b>Frequency</b></th>
+                            <th align="center"><b>Amount</b></th>
+                            <th align="center"><b><label id="choosebleLabel">Anual</label> amount</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 350px;">Electricity</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="electricityInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="electricityLabel">0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gas</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="gasInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="gasLabel">0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Water</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="waterInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="waterLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Internet</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="internetInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="internetLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pay TV</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="payTvInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="payTvLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Home phone</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="homePhoneInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="homePhoneLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mobile phone(s)</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="mobilePhonesInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="mobilePhonesLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Other</td>
+                            <td align="center">
+                                <select>
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="otherTwoInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="otherTwoLabel" >0</label>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <button wicket:id="previousPage">Previous</button>
+                <input type="submit" value="Save"></input>
+                <button wicket:id="nextPage">Next</button>
+            </form>    
+        </wicket:extend>
+    </body>
+</html>

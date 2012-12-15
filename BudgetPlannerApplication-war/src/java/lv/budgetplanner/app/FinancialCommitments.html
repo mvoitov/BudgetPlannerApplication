@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>FinancialCommitments</title>
+        <wicket:link>
+            <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        </wicket:link>
+    </head>
+    <body>
+        <wicket:extend>
+            <form wicket:id="form">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th align="center"><b>Financial commitments</b></th>
+                            <th align="center"><b>Frequency</b></th>
+                            <th align="center"><b>Amount</b></th>
+                            <th align="center"><b><span id="choosebleLabel">Anual</span> amount</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rent / mortgage</td>
+                            <td align="center">
+                                <select wicket:id="rentMontageSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="rentMontageInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="rentMontageLabel">0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Car loan repayments</td>
+                            <td align="center">
+                                <select wicket:id="carLoanRepaymentsSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="carLoanRepaymentsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="carLoanRepaymentsLabel">0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Other loan repayments</td>
+                            <td align="center">
+                                <select wicket:id="otherLoanRepaymentsSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="otherLoanRepaymentsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="otherLoanRepaymentsLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Credit card interest</td>
+                            <td align="center">
+                                <select wicket:id="creditCardInterestsSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="creditCardInterestsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="creditCardInterestsLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Voluntary super contributions</td>
+                            <td align="center">
+                                <select wicket:id="voluntarySuperContributionsSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="voluntarySuperContributionsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="voluntarySuperContributionsLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Savings</td>
+                            <td align="center">
+                                <select wicket:id="savingsSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="savingsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="savingsLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Child support payments</td>
+                            <td align="center">
+                                <select wicket:id="childSupportPaymentsSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="childSupportPaymentsInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="childSupportPaymentsLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Donations / charity</td>
+                            <td align="center">
+                                <select  wicket:id="donationsCharitySelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="donationsCharityInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="donationsCharityLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pocket money</td>
+                            <td align="center">
+                                <select  wicket:id="pocketMoneySelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="pocketMoneyInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="pocketMoneyLabel" >0</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Other</td>
+                            <td align="center">
+                                <select  wicket:id="otherSelect" class="span8">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <input wicket:id="otherInput" type="text" maxlength="9"></input>
+                            </td>
+                            <td align="center">
+                                $<label wicket:id="otherLabel" >0</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pager">
+                    <li class="previous"><a wicket:id="previousPage">&larr; Previous</a></li>
+                    <li><input type="submit" value="Update" class="btn"></input></li>
+                    <li class="next"><a wicket:id="nextPage">Next &rarr;</a></li>
+                </ul>
+            </form>    
+        </wicket:extend>
+    </body>
+</html>
