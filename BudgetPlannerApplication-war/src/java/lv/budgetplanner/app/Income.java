@@ -41,7 +41,6 @@ public final class Income extends BasePage {
                 Results.resultFields.result = incomeFields.incomeTotal - FinancialCommitments.outgoingFields.financialCommitmentsTotal;
             }
         };
-
         form.add(new Label("youTakeHomePayLabel", new PropertyModel<Integer>(incomeFields, "youTakeHomePayLabel")));
         form.add(new TextField<Integer>("youTakeHomePayInput", new PropertyModel<Integer>(incomeFields, "youTakeHomePayInput")));
 

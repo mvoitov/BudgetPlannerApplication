@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -85,5 +87,32 @@ public class DataBase {
         } catch (Exception e) {
         }
         return bool;
+    }
+
+    static List<String> selectBudgetPlannersNames(String username) {
+        ArrayList<String> budgetPlannersNamesList = new ArrayList<String>();
+        String budgetPlannerName;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "root");
+            Statement st = (Statement) con.createStatement();
+            String selectTableSQL = "select `Budget name` from budgetplace where `Username`='" + username + "'";
+            ResultSet rs = st.executeQuery(selectTableSQL);
+            while (rs.next()) {
+                budgetPlannerName = rs.getString("Budget name");
+                budgetPlannersNamesList.add(budgetPlannerName);
+            }
+        } catch (Exception e) {
+        }
+        budgetPlannersNamesList.add("Save as*");
+        return budgetPlannersNamesList;
+
+    }
+
+    static boolean saveBudget(String budgetName) {
+        boolean bool = true;
+        
+        return bool;
+        
     }
 }

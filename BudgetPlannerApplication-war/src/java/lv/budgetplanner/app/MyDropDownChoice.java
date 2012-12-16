@@ -30,7 +30,7 @@ public class MyDropDownChoice extends DropDownChoice<Integer> {
                     case 4:
                         return "Quarterly";
                     case 1:
-                        return "Anually";
+                        return "Annually";
                     default:
                         throw new IllegalStateException(value + " is not mapped!");
                 }
