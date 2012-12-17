@@ -17,7 +17,7 @@
                             <th align="center"><b>Financial commitments</b></th>
                             <th align="center"><b>Frequency</b></th>
                             <th align="center"><b>Amount</b></th>
-                            <th align="center"><b><span id="choosebleLabel">Anual</span> amount</b></th>
+                            <th align="center"><b>Annual amount</b></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,7 +40,7 @@
                                 </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="rentMontageLabel">0</label>
+                                <h5>$<span class="text-success" wicket:id="rentMontageLabel">0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -55,10 +55,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="carLoanRepaymentsInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="carLoanRepaymentsInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="carLoanRepaymentsLabel">0</label>
+                                <h5>$<span class="text-success" wicket:id="carLoanRepaymentsLabel">0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -73,10 +77,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="otherLoanRepaymentsInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="otherLoanRepaymentsInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="otherLoanRepaymentsLabel" >0</label>
+                                <h5>$<span class="text-success" wicket:id="otherLoanRepaymentsLabel" >0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -91,10 +99,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="creditCardInterestsInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="creditCardInterestsInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="creditCardInterestsLabel" >0</label>
+                                <h5>$<span class="text-success" wicket:id="creditCardInterestsLabel" >0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -109,10 +121,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="voluntarySuperContributionsInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="voluntarySuperContributionsInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="voluntarySuperContributionsLabel" >0</label>
+                                <h5>$<span class="text-success" wicket:id="voluntarySuperContributionsLabel" >0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -127,10 +143,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="savingsInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="savingsInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="savingsLabel" >0</label>
+                                <h5>$<span class="text-success" wicket:id="savingsLabel" >0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -145,10 +165,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="childSupportPaymentsInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="childSupportPaymentsInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="childSupportPaymentsLabel" >0</label>
+                                <h5>$<span class="text-success" wicket:id="childSupportPaymentsLabel" >0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -163,10 +187,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="donationsCharityInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="donationsCharityInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="donationsCharityLabel" >0</label>
+                                <h5>$<span class="text-success" wicket:id="donationsCharityLabel" >0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -181,10 +209,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="pocketMoneyInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="pocketMoneyInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="pocketMoneyLabel" >0</label>
+                                <h5>$<span class="text-success" wicket:id="pocketMoneyLabel" >0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -199,10 +231,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="otherInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="otherInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="otherLabel" >0</label>
+                                <h5>$<span class="text-success" wicket:id="otherLabel" >0</span></h5>
                             </td>
                         </tr>
                     </tbody>

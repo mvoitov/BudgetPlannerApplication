@@ -8,13 +8,13 @@
     </head>
     <body>
         <wicket:extend>
-            <p>Summary</p>
+            <h3><p>Summary</p></h3>
 
             <p>Your budget position:</p>
 
-            <p>You are spending $<label></label> per year less than you earn</p>
+            <p>You are spending $<span class="text-success" wicket:id="resultTotal">0</span> per year <span wicket:id="lessOrMore">less</span> than you earn.</p>
 
-            <p>Congratulations!</p>
+            <h1><p wicket:id="summary">Congratulations!</p></h1>
 
         </wicket:extend>
     </body>

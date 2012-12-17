@@ -37,6 +37,12 @@
             #footer {
                 background-color: #bebebe;
             }
+            .feedbackPanelERROR {
+                color: red;
+            }
+            .feedbackPanelSUCCESS {
+                color: green;
+            }
         </style>
     </head>
     <body>
@@ -61,14 +67,6 @@
                         <table border="0" cellspacing="1" cellpadding="1">
                             <thead>
                                 <tr>
-                                    <th>Summary <select class="span6" wicket:id="budgetFrequences">
-                                            <option>Anual</option>
-                                            <option>Week</option>
-                                            <option>Fortnight</option>
-                                            <option>Month</option>
-                                            <option>Quarter</option>
-                                        </select>
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -100,7 +98,7 @@
                                     <td><span class="badge badge-inverse">Total outgoings : </span></td>
                                 </tr>
                                 <tr>
-                                    <td><h2>What's left $<span wicket:id="whatsLeftLabel">0</span> per <span wicket:id="per">year.</span></h2></td>
+                                    <td><h2>What's left <h2>$<span class="text-success" wicket:id="whatsLeftLabel">0</span></h2><h2> per <span wicket:id="per">year.</span></h2></h2></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -146,13 +144,15 @@
                 <div class="container">
                     <select class="span3" wicket:id="budgetPlannersNamesSelector">
                         <option>Select saved budget</option>
-                        <option>Save as*</option>
                     </select>
-                    <button wicket:id="saveBudgetButton" class="btn">Save budget</button>
-                    <button wicket:id="deleteBudgetbutton" class="btn">Delete budget</button>
-                    <button wicket:id="editBudgetButton" class="btn">Edit budget</button>
+                    <wicket:link><a wicket:id="createBudgetButton" class="btn btn-primary">Create budget</a></wicket:link>
+                    <wicket:link><a wicket:id="saveBudgetButton" class="btn">Save budget</a></wicket:link>
+                    <wicket:link><a wicket:id="deleteBudgetbutton" class="btn">Delete budget</a></wicket:link>
                     <span class="label">You are: <span wicket:id="whoiam"></span></span>
                     <wicket:link><a href="SignOut.html" class="btn btn-link">Sign Out</a></wicket:link>
+                    <div class="alert-info">
+                        <span wicket:id="feedback"/>
+                    </div>
                 </div>
                 <div id="footer">
                     <div class="container" align="center">

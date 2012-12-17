@@ -3,7 +3,7 @@
 <html xmlns:wicket="http://wicket.apache.org">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Budget planner | Login page</title>
+        <title>Budget planner | Budget Creation Page</title>
         <wicket:link>
             <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
         </wicket:link>
@@ -38,27 +38,20 @@
                 margin-bottom: 15px;
                 padding: 7px 9px;
             }
-            .feedbackPanelERROR {
-                color: red;
-            }
+
         </style>
-        <wicket:link>
-            <link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css" />
-        </wicket:link>
     </head>
     <body>
         <div class="container">
-            <form wicket:id="signInForm" class="form-signin">
-                <h2 class="form-signin-heading">Please sign in</h2>
+            <form wicket:id="budgetCreationForm" class="form-signin">
+                <h2 class="form-signin-heading">Budget Creation</h2>
                 <div class="alert-error">
                     <span wicket:id="feedback"/>
                 </div>
-                <input wicket:id="username" type="text" class="input-block-level" size="30" placeholder="Username"></input>
+                <input wicket:id="budgetName" type="text" class="input-block-level" size="30" placeholder="New budget name"></input>
 
-                <input wicket:id ="password" type="password" class="input-block-level" size="30" placeholder="Password"></input>
-
-                <button class="btn btn-large btn-primary" type="submit">Sign in</button> 
-                <a href="#" wicket:id="registrationPage" class="btn btn-link">Registration</a>
+                <button class="btn btn-large btn-primary" type="submit">Create budget</button> 
+                <a href="#" wicket:id="homePage" class="btn btn-link">Home page</a>
             </form>
         </div>
         <script src="../js/bootstrap.js"></script>

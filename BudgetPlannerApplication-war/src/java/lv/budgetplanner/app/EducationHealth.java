@@ -96,7 +96,6 @@ public final class EducationHealth extends BasePage {
         form.add(new TextField<Integer>("otherTwoInput", otherTwoModel));
         
         add(form);
-
         
         form.add(new Link("previousPage") {
             @Override

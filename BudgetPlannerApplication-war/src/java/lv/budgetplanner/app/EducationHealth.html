@@ -4,25 +4,27 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>EducationHealth</title>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <wicket:link>
+            <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        </wicket:link>
     </head>
     <body>
         <wicket:extend>
             <form wicket:id="form">
-                <table style="width: 80%;">
+                <table class="table">
                     <thead>
                         <tr>
                             <th align="center"><b>Education</b></th>
                             <th align="center"><b>Frequency</b></th>
                             <th align="center"><b>Amount</b></th>
-                            <th align="center"><b><label id="choosebleLabel">Anual</label> amount</b></th>
+                            <th align="center"><b>Annual amount</b></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="width: 350px;">School fees</td>
+                            <td>School fees</td>
                             <td align="center">
-                                <select>
+                                <select class="span8">
                                     <option>Weekly</option>
                                     <option>Forthnightly</option>
                                     <option>Monthly</option>
@@ -31,10 +33,14 @@
                                 </select>
                             </td>
                             <td align="center">
-                                <input wicket:id="schoolFeesInput" type="text" maxlength="9"></input>
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="schoolFeesInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
                             </td>
                             <td align="center">
-                                $<label wicket:id="schoolFeesLabel">0</label>
+                                <h5>$<span class="text-success" wicket:id="schoolFeesLabel">0</span></h5>
                             </td>
                         </tr>
                         <tr>
@@ -147,18 +153,18 @@
                         </tr>
                     </tbody>
                 </table>
-                <table style="width: 80%;">
+                <table class="table">
                     <thead>
                         <tr>
                             <th align="center"><b>Health</b></th>
                             <th align="center"><b>Frequency</b></th>
                             <th align="center"><b>Amount</b></th>
-                            <th align="center"><b><label id="choosebleLabel">Anual</label> amount</b></th>
+                            <th align="center"><b>Annual amount</b></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="width: 350px;">Private health insurance</td>
+                            <td>Private health insurance</td>
                             <td align="center">
                                 <select>
                                     <option>Weekly</option>
@@ -304,9 +310,11 @@
 
                     </tbody>
                 </table>
-                <button wicket:id="previousPage">Previous</button>
-                <input type="submit" value="Save"></input>
-                <button wicket:id="nextPage">Next</button>
+                <ul class="pager">
+                    <li class="previous"><a wicket:id="previousPage">&larr; Previous</a></li>
+                    <li><input type="submit" value="Update" class="btn"></input></li>
+                    <li class="next"><a wicket:id="nextPage">Next &rarr;</a></li>
+                </ul>
             </form>    
         </wicket:extend>
     </body>

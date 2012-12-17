@@ -16,81 +16,123 @@ import org.apache.wicket.model.PropertyModel;
  */
 public final class HomeUtilities extends BasePage {
 
-    private Integer councilRates = 0;
-    private Integer bodyCorporateFees = 0;
-    private Integer homeAndContestsInsurance = 0;
-    private Integer homeMaintenanceAndRepairs = 0;
-    private Integer newFurnitureAppliances = 0;
-    private Integer otherOne = 0;
-    private Integer electricity = 0;
-    private Integer gas = 0;
-    private Integer water = 0;
-    private Integer internet = 0;
-    private Integer payTv = 0;
-    private Integer homePhone = 0;
-    private Integer mobilePhones = 0;
-    private Integer otherTwo = 0;
+    public static OutgoingFields outgoingFields = new OutgoingFields();
 
     public HomeUtilities() {
-        Form<?> form = new Form("form");
+        Form<?> form = new Form("form") {
+            @Override
+            protected void onSubmit() {
+                FinancialCommitments.outgoingFields.councilRatesLabel = FinancialCommitments.outgoingFields.councilRatesInput * FinancialCommitments.outgoingFields.councilRatesFrequency;
+                FinancialCommitments.outgoingFields.bodyCorporateFeesLabel=FinancialCommitments.outgoingFields.bodyCorporateFeesInput*FinancialCommitments.outgoingFields.bodyCorporateFeesFrequency;
+                FinancialCommitments.outgoingFields.carLoanRepaymentsLabel=FinancialCommitments.outgoingFields.carLoanRepaymentsInput*FinancialCommitments.outgoingFields.carLoanRepaymentsFrequency;
+                FinancialCommitments.outgoingFields.childSupportPaymentsLabel=FinancialCommitments.outgoingFields.childSupportPaymentsInput*FinancialCommitments.outgoingFields.childSupportPaymentsFrequency;
+                FinancialCommitments.outgoingFields.creditCardInterestsLabel=FinancialCommitments.outgoingFields.creditCardInterestsInput*FinancialCommitments.outgoingFields.creditCardInterestsFrequency;
+                FinancialCommitments.outgoingFields.donationsCharityLabel=FinancialCommitments.outgoingFields.donationsCharityInput*FinancialCommitments.outgoingFields.donationsCharityFrequency;
+                FinancialCommitments.outgoingFields.electricityLabel=FinancialCommitments.outgoingFields.electricityInput*FinancialCommitments.outgoingFields.electricityFrequency;
+                FinancialCommitments.outgoingFields.gasLabel=FinancialCommitments.outgoingFields.gasInput*FinancialCommitments.outgoingFields.gasFrequency;
+                FinancialCommitments.outgoingFields.homeAndContestsInsuranceLabel=FinancialCommitments.outgoingFields.homeAndContestsInsuranceInput*FinancialCommitments.outgoingFields.homeAndContestsInsuranceFrequency;
+                FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsLabel=FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsInput*FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsFrequency;
+                FinancialCommitments.outgoingFields.newFurnitureAppliancesLabel=FinancialCommitments.outgoingFields.newFurnitureAppliancesInput*FinancialCommitments.outgoingFields.newFurnitureAppliancesFrequency;
+                FinancialCommitments.outgoingFields.otherOneLabel=FinancialCommitments.outgoingFields.otherOneInput*FinancialCommitments.outgoingFields.otherOneFrequency;
+                FinancialCommitments.outgoingFields.otherTwoLabel=FinancialCommitments.outgoingFields.otherTwoInput*FinancialCommitments.outgoingFields.otherTwoFrequency;
+                FinancialCommitments.outgoingFields.homePhoneLabel=FinancialCommitments.outgoingFields.homePhoneInput*FinancialCommitments.outgoingFields.homePhoneFrequency;
+                FinancialCommitments.outgoingFields.internetLabel=FinancialCommitments.outgoingFields.internetInput*FinancialCommitments.outgoingFields.internetFrequency;
+                FinancialCommitments.outgoingFields.payTvLabel=FinancialCommitments.outgoingFields.payTvInput*FinancialCommitments.outgoingFields.payTvFrequency;
+                FinancialCommitments.outgoingFields.mobilePhonesLabel=FinancialCommitments.outgoingFields.mobilePhonesInput*FinancialCommitments.outgoingFields.mobilePhonesFrequency;
+                FinancialCommitments.outgoingFields.homeUtilitiesTotal = FinancialCommitments.outgoingFields.councilRatesLabel
+                        + FinancialCommitments.outgoingFields.bodyCorporateFeesLabel
+                        + FinancialCommitments.outgoingFields.carLoanRepaymentsLabel
+                        + FinancialCommitments.outgoingFields.childSupportPaymentsLabel
+                        + FinancialCommitments.outgoingFields.creditCardInterestsLabel
+                        + FinancialCommitments.outgoingFields.donationsCharityLabel
+                        + FinancialCommitments.outgoingFields.electricityLabel
+                        + FinancialCommitments.outgoingFields.gasLabel
+                        + FinancialCommitments.outgoingFields.homeAndContestsInsuranceLabel
+                        + FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsLabel
+                        + FinancialCommitments.outgoingFields.newFurnitureAppliancesLabel
+                        + FinancialCommitments.outgoingFields.otherOneLabel
+                        + FinancialCommitments.outgoingFields.otherTwoLabel
+                        + FinancialCommitments.outgoingFields.homePhoneLabel
+                        + FinancialCommitments.outgoingFields.internetLabel
+                        + FinancialCommitments.outgoingFields.payTvLabel
+                        + FinancialCommitments.outgoingFields.mobilePhonesLabel;
+                Results.resultFields.result = Income.incomeFields.incomeTotal - outgoingFields.financialCommitmentsTotal - FinancialCommitments.outgoingFields.homeUtilitiesTotal;
+            }
+        };
 
-        PropertyModel<Integer> councilRatesModel = new PropertyModel<Integer>(this, "councilRates");
-        form.add(new Label("councilRatesLabel", councilRatesModel));
-        form.add(new TextField<Integer>("councilRatesInput", councilRatesModel));
 
-        PropertyModel<Integer> bodyCorporateFeesModel = new PropertyModel<Integer>(this, "bodyCorporateFees");
-        form.add(new Label("bodyCorporateFeesLabel", bodyCorporateFeesModel));
-        form.add(new TextField<Integer>("bodyCorporateFeesInput", bodyCorporateFeesModel));
+        form.add(new Label("councilRatesLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "councilRatesLabel")));
+        form.add(new TextField<Integer>("councilRatesInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "councilRatesInput")));
 
-        PropertyModel<Integer> homeAndContestsInsuranceModel = new PropertyModel<Integer>(this, "homeAndContestsInsurance");
-        form.add(new Label("homeAndContestsInsuranceLabel", homeAndContestsInsuranceModel));
-        form.add(new TextField<Integer>("homeAndContestsInsuranceInput", homeAndContestsInsuranceModel));
+        form.add(new Label("bodyCorporateFeesLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "bodyCorporateFeesLabel")));
+        form.add(new TextField<Integer>("bodyCorporateFeesInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "bodyCorporateFeesInput")));
 
-        PropertyModel<Integer> homeMaintenanceAndRepairsModel = new PropertyModel<Integer>(this, "homeMaintenanceAndRepairs");
-        form.add(new Label("homeMaintenanceAndRepairsLabel", homeMaintenanceAndRepairsModel));
-        form.add(new TextField<Integer>("homeMaintenanceAndRepairsInput", homeMaintenanceAndRepairsModel));
+        form.add(new Label("homeAndContestsInsuranceLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homeAndContestsInsuranceLabel")));
+        form.add(new TextField<Integer>("homeAndContestsInsuranceInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homeAndContestsInsuranceInput")));
 
-        PropertyModel<Integer> newFurnitureAppliancesModel = new PropertyModel<Integer>(this, "newFurnitureAppliances");
-        form.add(new Label("newFurnitureAppliancesLabel", newFurnitureAppliancesModel));
-        form.add(new TextField<Integer>("newFurnitureAppliancesInput", newFurnitureAppliancesModel));
+        form.add(new Label("homeMaintenanceAndRepairsLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homeMaintenanceAndRepairsLabel")));
+        form.add(new TextField<Integer>("homeMaintenanceAndRepairsInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homeMaintenanceAndRepairsInput")));
 
-        PropertyModel<Integer> otherOneModel = new PropertyModel<Integer>(this, "otherOne");
-        form.add(new Label("otherOneLabel", otherOneModel));
-        form.add(new TextField<Integer>("otherOneInput", otherOneModel));
+        form.add(new Label("newFurnitureAppliancesLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "newFurnitureAppliancesLabel")));
+        form.add(new TextField<Integer>("newFurnitureAppliancesInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "newFurnitureAppliancesInput")));
 
-        PropertyModel<Integer> electricityModel = new PropertyModel<Integer>(this, "electricity");
-        form.add(new Label("electricityLabel", electricityModel));
-        form.add(new TextField<Integer>("electricityInput", electricityModel));
+        form.add(new Label("otherOneLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "otherOneLabel")));
+        form.add(new TextField<Integer>("otherOneInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "otherOneInput")));
 
-        PropertyModel<Integer> gasModel = new PropertyModel<Integer>(this, "gas");
-        form.add(new Label("gasLabel", gasModel));
-        form.add(new TextField<Integer>("gasInput", gasModel));
+        form.add(new Label("electricityLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "electricityLabel")));
+        form.add(new TextField<Integer>("electricityInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "electricityInput")));
 
-        PropertyModel<Integer> waterModel = new PropertyModel<Integer>(this, "water");
-        form.add(new Label("waterLabel", waterModel));
-        form.add(new TextField<Integer>("waterInput", waterModel));
+        form.add(new Label("gasLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "gasLabel")));
+        form.add(new TextField<Integer>("gasInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "gasInput")));
 
-        PropertyModel<Integer> internetModel = new PropertyModel<Integer>(this, "internet");
-        form.add(new Label("internetLabel", internetModel));
-        form.add(new TextField<Integer>("internetInput", internetModel));
-        
-        PropertyModel<Integer> payTvModel = new PropertyModel<Integer>(this, "payTv");
-        form.add(new Label("payTvLabel", payTvModel));
-        form.add(new TextField<Integer>("payTvInput", payTvModel));
-        
-        PropertyModel<Integer> homePhoneModel = new PropertyModel<Integer>(this, "homePhone");
-        form.add(new Label("homePhoneLabel", homePhoneModel));
-        form.add(new TextField<Integer>("homePhoneInput", homePhoneModel));
-        
-        PropertyModel<Integer> mobilePhonesModel = new PropertyModel<Integer>(this, "mobilePhones");
-        form.add(new Label("mobilePhonesLabel", mobilePhonesModel));
-        form.add(new TextField<Integer>("mobilePhonesInput", mobilePhonesModel));
-        
-        PropertyModel<Integer> otherTwoModel = new PropertyModel<Integer>(this, "otherTwo");
-        form.add(new Label("otherTwoLabel", otherTwoModel));
-        form.add(new TextField<Integer>("otherTwoInput", otherTwoModel));
+        form.add(new Label("waterLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "waterLabel")));
+        form.add(new TextField<Integer>("waterInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "waterInput")));
+
+        form.add(new Label("internetLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "internetLabel")));
+        form.add(new TextField<Integer>("internetInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "internetInput")));
+
+        form.add(new Label("payTvLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "payTvLabel")));
+        form.add(new TextField<Integer>("payTvInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "payTvInput")));
+
+        form.add(new Label("homePhoneLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homePhoneLabel")));
+        form.add(new TextField<Integer>("homePhoneInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homePhoneInput")));
+
+        form.add(new Label("mobilePhonesLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "mobilePhonesLabel")));
+        form.add(new TextField<Integer>("mobilePhonesInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "mobilePhonesInput")));
+
+        form.add(new Label("otherTwoLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "otherTwoLabel")));
+        form.add(new TextField<Integer>("otherTwoInput", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "otherTwoInput")));
 
         add(form);
+
+        form.add(new MyDropDownChoice("councilRatesSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "councilRatesFrequency")));
+
+        form.add(new MyDropDownChoice("bodyCorporateFeesSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "bodyCorporateFeesFrequency")));
+
+        form.add(new MyDropDownChoice("homeAndContestsInsuranceSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homeAndContestsInsuranceFrequency")));
+
+        form.add(new MyDropDownChoice("homeMaintenanceAndRepairsSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homeMaintenanceAndRepairsFrequency")));
+
+        form.add(new MyDropDownChoice("newFurnitureAppliancesSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "newFurnitureAppliancesFrequency")));
+
+        form.add(new MyDropDownChoice("otherOneSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "otherOneFrequency")));
+
+        form.add(new MyDropDownChoice("electricitySelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "electricityFrequency")));
+
+        form.add(new MyDropDownChoice("gasSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "gasFrequency")));
+
+        form.add(new MyDropDownChoice("waterSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "waterFrequency")));
+
+        form.add(new MyDropDownChoice("internetSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "internetFrequency")));
+
+        form.add(new MyDropDownChoice("payTvSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "payTvFrequency")));
+
+        form.add(new MyDropDownChoice("homePhoneSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homePhoneFrequency")));
+
+        form.add(new MyDropDownChoice("mobilePhonesSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "mobilePhonesFrequency")));
+
+        form.add(new MyDropDownChoice("otherTwoSelect", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "otherTwoFrequency")));
+
         form.add(new Link("previousPage") {
             @Override
             public void onClick() {

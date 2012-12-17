@@ -47,6 +47,7 @@ public final class SignIn extends WebPage {
             SignInSession session = getMySession();
 
             if (session.signIn(getUsername(), getPassword())) {
+                DataBase.getPageReadyBeforeResponse();
                 setResponsePage(getApplication().getHomePage());
             } else {
                 String errmsg = getString("loginError", null, "Incorrect username or password.");
