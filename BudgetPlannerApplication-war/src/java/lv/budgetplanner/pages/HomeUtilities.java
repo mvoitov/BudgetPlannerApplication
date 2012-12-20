@@ -2,8 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lv.budgetplanner.app;
+package lv.budgetplanner.pages;
 
+import lv.budgetplanner.app.BasePage;
+import lv.budgetplanner.app.MyDropDownChoice;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
@@ -16,29 +18,28 @@ import org.apache.wicket.model.PropertyModel;
  */
 public final class HomeUtilities extends BasePage {
 
-    public static OutgoingFields outgoingFields = new OutgoingFields();
-
     public HomeUtilities() {
         Form<?> form = new Form("form") {
             @Override
             protected void onSubmit() {
                 FinancialCommitments.outgoingFields.councilRatesLabel = FinancialCommitments.outgoingFields.councilRatesInput * FinancialCommitments.outgoingFields.councilRatesFrequency;
-                FinancialCommitments.outgoingFields.bodyCorporateFeesLabel=FinancialCommitments.outgoingFields.bodyCorporateFeesInput*FinancialCommitments.outgoingFields.bodyCorporateFeesFrequency;
-                FinancialCommitments.outgoingFields.carLoanRepaymentsLabel=FinancialCommitments.outgoingFields.carLoanRepaymentsInput*FinancialCommitments.outgoingFields.carLoanRepaymentsFrequency;
-                FinancialCommitments.outgoingFields.childSupportPaymentsLabel=FinancialCommitments.outgoingFields.childSupportPaymentsInput*FinancialCommitments.outgoingFields.childSupportPaymentsFrequency;
-                FinancialCommitments.outgoingFields.creditCardInterestsLabel=FinancialCommitments.outgoingFields.creditCardInterestsInput*FinancialCommitments.outgoingFields.creditCardInterestsFrequency;
-                FinancialCommitments.outgoingFields.donationsCharityLabel=FinancialCommitments.outgoingFields.donationsCharityInput*FinancialCommitments.outgoingFields.donationsCharityFrequency;
-                FinancialCommitments.outgoingFields.electricityLabel=FinancialCommitments.outgoingFields.electricityInput*FinancialCommitments.outgoingFields.electricityFrequency;
-                FinancialCommitments.outgoingFields.gasLabel=FinancialCommitments.outgoingFields.gasInput*FinancialCommitments.outgoingFields.gasFrequency;
-                FinancialCommitments.outgoingFields.homeAndContestsInsuranceLabel=FinancialCommitments.outgoingFields.homeAndContestsInsuranceInput*FinancialCommitments.outgoingFields.homeAndContestsInsuranceFrequency;
-                FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsLabel=FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsInput*FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsFrequency;
-                FinancialCommitments.outgoingFields.newFurnitureAppliancesLabel=FinancialCommitments.outgoingFields.newFurnitureAppliancesInput*FinancialCommitments.outgoingFields.newFurnitureAppliancesFrequency;
-                FinancialCommitments.outgoingFields.otherOneLabel=FinancialCommitments.outgoingFields.otherOneInput*FinancialCommitments.outgoingFields.otherOneFrequency;
-                FinancialCommitments.outgoingFields.otherTwoLabel=FinancialCommitments.outgoingFields.otherTwoInput*FinancialCommitments.outgoingFields.otherTwoFrequency;
-                FinancialCommitments.outgoingFields.homePhoneLabel=FinancialCommitments.outgoingFields.homePhoneInput*FinancialCommitments.outgoingFields.homePhoneFrequency;
-                FinancialCommitments.outgoingFields.internetLabel=FinancialCommitments.outgoingFields.internetInput*FinancialCommitments.outgoingFields.internetFrequency;
-                FinancialCommitments.outgoingFields.payTvLabel=FinancialCommitments.outgoingFields.payTvInput*FinancialCommitments.outgoingFields.payTvFrequency;
-                FinancialCommitments.outgoingFields.mobilePhonesLabel=FinancialCommitments.outgoingFields.mobilePhonesInput*FinancialCommitments.outgoingFields.mobilePhonesFrequency;
+                FinancialCommitments.outgoingFields.bodyCorporateFeesLabel = FinancialCommitments.outgoingFields.bodyCorporateFeesInput * FinancialCommitments.outgoingFields.bodyCorporateFeesFrequency;
+                FinancialCommitments.outgoingFields.carLoanRepaymentsLabel = FinancialCommitments.outgoingFields.carLoanRepaymentsInput * FinancialCommitments.outgoingFields.carLoanRepaymentsFrequency;
+                FinancialCommitments.outgoingFields.childSupportPaymentsLabel = FinancialCommitments.outgoingFields.childSupportPaymentsInput * FinancialCommitments.outgoingFields.childSupportPaymentsFrequency;
+                FinancialCommitments.outgoingFields.creditCardInterestsLabel = FinancialCommitments.outgoingFields.creditCardInterestsInput * FinancialCommitments.outgoingFields.creditCardInterestsFrequency;
+                FinancialCommitments.outgoingFields.donationsCharityLabel = FinancialCommitments.outgoingFields.donationsCharityInput * FinancialCommitments.outgoingFields.donationsCharityFrequency;
+                FinancialCommitments.outgoingFields.electricityLabel = FinancialCommitments.outgoingFields.electricityInput * FinancialCommitments.outgoingFields.electricityFrequency;
+                FinancialCommitments.outgoingFields.gasLabel = FinancialCommitments.outgoingFields.gasInput * FinancialCommitments.outgoingFields.gasFrequency;
+                FinancialCommitments.outgoingFields.homeAndContestsInsuranceLabel = FinancialCommitments.outgoingFields.homeAndContestsInsuranceInput * FinancialCommitments.outgoingFields.homeAndContestsInsuranceFrequency;
+                FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsLabel = FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsInput * FinancialCommitments.outgoingFields.homeMaintenanceAndRepairsFrequency;
+                FinancialCommitments.outgoingFields.newFurnitureAppliancesLabel = FinancialCommitments.outgoingFields.newFurnitureAppliancesInput * FinancialCommitments.outgoingFields.newFurnitureAppliancesFrequency;
+                FinancialCommitments.outgoingFields.otherOneLabel = FinancialCommitments.outgoingFields.otherOneInput * FinancialCommitments.outgoingFields.otherOneFrequency;
+                FinancialCommitments.outgoingFields.otherTwoLabel = FinancialCommitments.outgoingFields.otherTwoInput * FinancialCommitments.outgoingFields.otherTwoFrequency;
+                FinancialCommitments.outgoingFields.homePhoneLabel = FinancialCommitments.outgoingFields.homePhoneInput * FinancialCommitments.outgoingFields.homePhoneFrequency;
+                FinancialCommitments.outgoingFields.internetLabel = FinancialCommitments.outgoingFields.internetInput * FinancialCommitments.outgoingFields.internetFrequency;
+                FinancialCommitments.outgoingFields.payTvLabel = FinancialCommitments.outgoingFields.payTvInput * FinancialCommitments.outgoingFields.payTvFrequency;
+                FinancialCommitments.outgoingFields.mobilePhonesLabel = FinancialCommitments.outgoingFields.mobilePhonesInput * FinancialCommitments.outgoingFields.mobilePhonesFrequency;
+                FinancialCommitments.outgoingFields.waterLabel = FinancialCommitments.outgoingFields.waterInput * FinancialCommitments.outgoingFields.waterFrequency;
                 FinancialCommitments.outgoingFields.homeUtilitiesTotal = FinancialCommitments.outgoingFields.councilRatesLabel
                         + FinancialCommitments.outgoingFields.bodyCorporateFeesLabel
                         + FinancialCommitments.outgoingFields.carLoanRepaymentsLabel
@@ -55,8 +56,9 @@ public final class HomeUtilities extends BasePage {
                         + FinancialCommitments.outgoingFields.homePhoneLabel
                         + FinancialCommitments.outgoingFields.internetLabel
                         + FinancialCommitments.outgoingFields.payTvLabel
-                        + FinancialCommitments.outgoingFields.mobilePhonesLabel;
-                Results.resultFields.result = Income.incomeFields.incomeTotal - outgoingFields.financialCommitmentsTotal - FinancialCommitments.outgoingFields.homeUtilitiesTotal;
+                        + FinancialCommitments.outgoingFields.mobilePhonesLabel
+                        + FinancialCommitments.outgoingFields.waterLabel;
+                Results.resultFields.result = Income.incomeFields.incomeTotal - FinancialCommitments.outgoingFields.financialCommitmentsTotal - FinancialCommitments.outgoingFields.homeUtilitiesTotal - FinancialCommitments.outgoingFields.educationHealthTotal - FinancialCommitments.outgoingFields.shoppingTransportTotal - FinancialCommitments.outgoingFields.entertainmentEatingOutTotal;
             }
         };
 

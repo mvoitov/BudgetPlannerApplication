@@ -2,8 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lv.budgetplanner.app;
+package lv.budgetplanner.pages;
 
+import lv.budgetplanner.app.BasePage;
+import lv.budgetplanner.app.MyDropDownChoice;
+import lv.budgetplanner.fields.OutgoingFields;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
@@ -42,7 +45,7 @@ public final class FinancialCommitments extends BasePage {
                         + outgoingFields.donationsCharityLabel
                         + outgoingFields.pocketMoneyLabel
                         + outgoingFields.otherLabel;
-                Results.resultFields.result = Income.incomeFields.incomeTotal - outgoingFields.financialCommitmentsTotal;
+                Results.resultFields.result = Income.incomeFields.incomeTotal - FinancialCommitments.outgoingFields.financialCommitmentsTotal - FinancialCommitments.outgoingFields.homeUtilitiesTotal - FinancialCommitments.outgoingFields.educationHealthTotal - FinancialCommitments.outgoingFields.shoppingTransportTotal - FinancialCommitments.outgoingFields.entertainmentEatingOutTotal;
             }
         };
 

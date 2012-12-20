@@ -4,14 +4,373 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>ShoppingTransport</title>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <wicket:link>
+            <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        </wicket:link>
     </head>
     <body>
         <wicket:extend>
-            <h1>Page5</h1>
-            <span wicket:id="label1"></span>
-            <button wicket:id="savePage">Save ></button>
-            <button wicket:id="nextPage">Next ></button>
+            <form wicket:id="form">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th align="center"><b>Shopping</b></th>
+                            <th align="center"><b>Frequency</b></th>
+                            <th align="center"><b>Amount</b></th>
+                            <th align="center"><b>Annual amount</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Supermarket</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="supermarketSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="supermarketInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="supermarketLabel">0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fruit / veg</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="fruitVegSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="fruitVegInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="fruitVegLabel">0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Baby products</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="babyProductsSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="babyProductsInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="babyProductsLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Clothing / shoes</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="clothingShoesSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="clothingShoesInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="clothingShoesLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cosmetics / toiletries</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="cosmeticsToiletriesSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="cosmeticsToiletriesInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="cosmeticsToiletriesLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hair dresser</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="hairDresserSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="hairDresserInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="hairDresserLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gifts and other</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="giftsAndOtherSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="giftsAndOtherInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="giftsAndOtherLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Other food and grocery</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="otherFoodAndGrocerySelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="otherFoodAndGroceryInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="otherFoodAndGroceryLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th align="center"><b>Transport</b></th>
+                            <th align="center"><b>Frequency</b></th>
+                            <th align="center"><b>Amount</b></th>
+                            <th align="center"><b>Annual amount</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Car insurance</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="carInsuranceSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="carInsuranceInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="carInsuranceLabel">0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Car maintenance</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="carMaintenanceSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="carMaintenanceInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="carMaintenanceLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Car rego / licence</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="carRegoLicenceSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="carRegoLicenceInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="carRegoLicenceLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Petrol</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="petrolSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="petrolInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="petrolLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Road tolls / parking</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="roadTollsParkingSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="roadTollsParkingInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="roadTollsParkingLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Trains / buses / ferries</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="trainsBusesFerriesSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="trainsBusesFerriesInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="trainsBusesFerriesLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Other</td>
+                            <td align="center">
+                                <select class="span8" wicket:id="otherSelect">
+                                    <option>Weekly</option>
+                                    <option>Forthnightly</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Anually</option>
+                                </select>
+                            </td>
+                            <td align="center">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input wicket:id="otherInput" type="text" maxlength="9" class="span4" id="appendedPrependedInput"></input>
+                                    <span class="add-on">.00</span>
+                                </div>
+                            </td>
+                            <td align="center">
+                                <h5>$<span class="text-success" wicket:id="otherLabel" >0</span></h5>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pager">
+                    <li class="previous"><a wicket:id="previousPage">&larr; Previous</a></li>
+                    <li><input type="submit" value="Update" class="btn"></input></li>
+                    <li class="next"><a wicket:id="nextPage">Next &rarr;</a></li>
+                </ul>
+            </form>    
         </wicket:extend>
     </body>
 </html>

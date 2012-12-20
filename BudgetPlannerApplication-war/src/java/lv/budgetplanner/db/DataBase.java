@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lv.budgetplanner.app;
+package lv.budgetplanner.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,6 +13,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import lv.budgetplanner.pages.FinancialCommitments;
+import lv.budgetplanner.pages.Income;
+import lv.budgetplanner.login.SignInSession;
 import org.apache.wicket.Session;
 
 /**
@@ -93,7 +96,7 @@ public class DataBase {
         return bool;
     }
 
-    static List<String> selectBudgetPlannersNames(String username) {
+    public static List<String> selectBudgetPlannersNames(String username) {
         ArrayList<String> budgetPlannersNamesList = new ArrayList<String>();
         String budgetPlannerName;
         try {
@@ -116,7 +119,7 @@ public class DataBase {
     public static String budgetNameDB;
     public static String usernameDB;
 
-    static boolean saveBudget(String budgetName) {
+    public static boolean saveBudget(String budgetName) {
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
@@ -153,7 +156,7 @@ public class DataBase {
         return bool;
     }
 
-    static void getPageReadyBeforeResponse() {
+    public static void getPageReadyBeforeResponse() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "root");
@@ -167,7 +170,7 @@ public class DataBase {
         }
     }
 
-    static boolean deleteBudget(String budgetName) {
+    public static boolean deleteBudget(String budgetName) {
         boolean bool = true;
         try {
             Class.forName("com.mysql.jdbc.Driver");

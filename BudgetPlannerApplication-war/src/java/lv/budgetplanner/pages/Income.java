@@ -2,8 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package lv.budgetplanner.app;
+package lv.budgetplanner.pages;
 
+import lv.budgetplanner.app.BasePage;
+import lv.budgetplanner.fields.IncomeFields;
+import lv.budgetplanner.app.MyDropDownChoice;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
@@ -38,7 +41,7 @@ public final class Income extends BasePage {
                         + incomeFields.familyBenefitsPaymentsLabel
                         + incomeFields.childSupportReseivedLabel
                         + incomeFields.otherLabel;
-                Results.resultFields.result = incomeFields.incomeTotal - FinancialCommitments.outgoingFields.financialCommitmentsTotal;
+                Results.resultFields.result = Income.incomeFields.incomeTotal - FinancialCommitments.outgoingFields.financialCommitmentsTotal - FinancialCommitments.outgoingFields.homeUtilitiesTotal - FinancialCommitments.outgoingFields.educationHealthTotal - FinancialCommitments.outgoingFields.shoppingTransportTotal - FinancialCommitments.outgoingFields.entertainmentEatingOutTotal;
             }
         };
         form.add(new Label("youTakeHomePayLabel", new PropertyModel<Integer>(incomeFields, "youTakeHomePayLabel")));

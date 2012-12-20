@@ -4,9 +4,19 @@
  */
 package lv.budgetplanner.app;
 
+import lv.budgetplanner.login.SignInSession;
+import lv.budgetplanner.error404.ErrorPage404;
+import lv.budgetplanner.db.DataBase;
 import java.util.List;
+import lv.budgetplanner.pages.BudgetCreationPage;
+import lv.budgetplanner.pages.EducationHealth;
+import lv.budgetplanner.pages.EntertainmentEatingOut;
+import lv.budgetplanner.pages.FinancialCommitments;
+import lv.budgetplanner.pages.HomeUtilities;
+import lv.budgetplanner.pages.Income;
+import lv.budgetplanner.pages.Results;
+import lv.budgetplanner.pages.ShoppingTransport;
 import org.apache.wicket.Session;
-import org.apache.wicket.ajax.form.AjaxFormChoiceComponentUpdatingBehavior;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.DropDownChoice;
@@ -40,9 +50,9 @@ public class BasePage extends WebPage implements AuthenticatedWebPage {
         form.add(new Label("incomeLabel", new PropertyModel<Integer>(Income.incomeFields, "incomeTotal")));
         form.add(new Label("financialCommLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "financialCommitmentsTotal")));
         form.add(new Label("homeUtilitiesLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "homeUtilitiesTotal")));
-        form.add(new Label("educationHealthLabel", "0"));
-        form.add(new Label("shoppingTransportLabel", "0"));
-        form.add(new Label("entertainmentLabel", "0"));
+        form.add(new Label("educationHealthLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "educationHealthTotal")));
+        form.add(new Label("shoppingTransportLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "shoppingTransportTotal")));
+        form.add(new Label("entertainmentLabel", new PropertyModel<Integer>(FinancialCommitments.outgoingFields, "entertainmentEatingOutTotal")));
         form.add(new Label("whatsLeftLabel", new PropertyModel<Integer>(Results.resultFields, "result")));
         form.add(new Label("per", "Year!"));
 
